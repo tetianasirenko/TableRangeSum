@@ -15,7 +15,7 @@ struct TableKey
 		Col = aCol;
 	}
 
-	bool operator= (const TableKey& rhs) const
+	bool operator== (const TableKey& rhs) const
 	{
 		if ((Row == rhs.Row) && (Col == rhs.Col))
 			return true;
@@ -42,7 +42,10 @@ public:
 	void AddCell(TableKey aKey, double aValue);
 	void AddCell(string aInputStr);
 
+	void DeleteAllCells();
+
 	double GetRangeSum(TableKey aBegin, TableKey aEnd);
+	double GetRangeSum2(TableKey aBegin, TableKey aEnd);
 
 private:
 	map<TableKey, double>  fTable;
